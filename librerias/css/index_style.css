@@ -1,0 +1,70 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: times nex roman, arial, vedana;
+	color: #000000;
+
+}
+/*menu lateral*/
+#barra-lateral: hover{
+	width: 170px;
+}
+#logo_menu{
+	width: 40px;
+	height: 40px;
+	margin: 10px;
+	background-image:url(../IMAGENES/diamante.png);
+}
+div#contenedor_logos_primero{
+	margin-top: 70px;
+}
+div.contenedor_logos{
+	margin-top: 70px;
+	margin-left: 10px;
+	width: 130px;
+	height: 40px;
+
+}
+
+div.logo{
+	width: 40px;
+	height:40px;
+	background:url(../IMAGENES/diamante.png);
+	background:url(../IMAGENES/diamante.png);
+	float:left;
+
+}
+p.titulo_menu{
+	margin-left: 60px;
+	line-height: 40px;
+
+}
+div#body{
+	position: absolute;
+	right: 0px;
+	min-height: 300px;
+	left: 170px;
+}
+div#texto{
+	width: 50px;
+	min-height: 300px;
+	float: left;
+}
+p#texto_contenedor_1{
+	font-size: 25px;
+	margin: 30px;
+	margin-top: 15px;
+	width: 300px;
+	color:#E6E6E6;
+}
+div#foto{
+	width: 50px;
+	height: 300px;
+	float: right;
+
+}
+img#foto_contenedor_1{
+	margin: auto;
+	margin-top: 15px;
+
+}

@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+English+SC');
+
+:root {
+  font-size:0.625em;
+}
+
+/* 
+layout
+*/
+html,body {min-height:100vh}
+body {
+    background-image: url("assets/hero/h1_hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content:center;
+  align-items:center;
+}
+
+
+
+/* 
+Counters 
+*/
+
+.menu ol { 
+  counter-reset:menu;
+}
+
+
+
+/*
+Regular menu items
+*/
+
+.menu-item a {
+    
+  display:flex;
+  justify-content:flex-start; /*shrink towards text*/
+  color:currentColor;
+  text-decoration:none;
+  padding:0.3rem 0; /* avoid flickin' */
+  order:0;
+}
+
+.menu-item a::before { /* dots */
+  content:"";
+  display:block;
+  border-bottom:1px dotted red;
+  position:relative; top:-3px;
+  flex:1 1 auto;
+  margin:0 1rem;
+  order:1;
+}
+
+.menu-item a::after { /* item ids */
+  counter-increment:menu;
+  content:counters(menu, ".");
+  flex:0 0 auto;
+  order:2;
+  transform:rotate(30deg)scale(1.2);
+  text-decoration:underline;
+}
+
+
+
+/* 
+Sub menu & items
+*/
+
+.sub-menu {
+  font-size:1.6rem;
+  font-weight:normal;
+}
+
+.sub-menu > li > a {
+  text-indent:0ch; /*
+    Chrome indentS the "dots" elm, i.e. it counts pseudo-elm.
+    FF and Edge indents first non pseudo-elm. 
+    Turn it off for consistency.
+  */
+  padding:0.5rem 0 0.5rem 2ch;
+  margin:0;
+}
+
+
+
+/*
+Main menu
+*/
+
+.contenido{
+    background-color: rgba(0,0,0,0.9);
+    width: 500px;
+    border-radius: 5%;
+    text-align: -webkit-center;
+    transform:rotate(0deg);
+}
+.menu {
+  width:22vw;
+  min-width:17ch;
+  display:flex;
+  flex-flow:column nowrap;
+  font:bold 5rem/1 'IM Fell English SC', serif;
+  position:relative;
+    color: white;
+}
+
+.menu::before {
+  content:"/";
+  align-self:center;
+  transform:rotate(0deg);
+  margin-bottom:1rem;
+}
+
+.menu::after {
+  content:"/";
+  align-self:center;
+  transform:rotate(0deg);
+  margin-top:1rem;
+}
+
+
+
+/*
+Fx
+*/
+
+.contenido { transition:transform 0.0s; }
+.contenido:hover { transform:rotate(0); }
+
+.menu::before { transition:transform 0.0s; }
+.menu:hover::before { transform:rotate(0); content:"__"; }
+.menu::after { transition:transform 0.0s; }
+.menu:hover::after { transform:rotate(0); content:"__"; }
+
+.menu .menu-item a::after { transition:transform 0.0s }
+.menu:hover .menu-item a::after { transform:rotate(0) }
+
+.menu-item:hover {
+    
+  
+  background:rgba(255,255,255,0.15);
+  opacity:1 !important;
+}
+
+.menu-item:hover a::after {
+    
+  text-decoration:none;
+}
+
+.menu-item:hover > a::before {
+    
+  
+  width:0; flex-grow:0;
+  transform-origin:center bottom;
+}
+
+/*
+Collapse
+*/
+
+.sub-menu > .menu-item {
+    
+
+  
+  transform-origin:center top;
+  
+}
+
